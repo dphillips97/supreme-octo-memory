@@ -4,12 +4,7 @@ This repo contains a range of practice problems.
 
 ### Sources
 
-1. Timus Online Judge
- - Collects various programming problems, from high school
- level to "[Dennis Ritchie](https://en.wikipedia.org/wiki/Dennis_Ritchie)".
- - Has a .ru URL so it may be blocked on some VPNs 
-
-2. [Data Engineering Practice Problems from Daniel Beach](https://github.com/danielbeach/data-engineering-practice?tab=readme-ov-file)
+[Data Engineering Practice Problems from Daniel Beach](https://github.com/danielbeach/data-engineering-practice?tab=readme-ov-file)
  - Daniel Beech is a data engineer who has graciously created a series
  of problems related to his job:
   - Python data processing.
@@ -19,3 +14,6 @@ This repo contains a range of practice problems.
   - PySpark
   - Dirty data cleaning
   - Docker
+
+[Jane Street Capital's Advent of Code 2025](https://adventofcode.com/)
+1. Day 1: Rotating dial
