@@ -1,9 +1,7 @@
 import logging
-import urllib.request
 
 START_DIAL_POSITION: int = 50
 ZERO_COUNTER: int = 0
-URL = r"https://adventofcode.com/2025/day/1/input"
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -30,20 +28,30 @@ def parse_instructions(line: str) -> int:
     return action
 
 def compute_result(position: int, action: int) -> int:
-    """
+    """Account for offset. For instance, 99 + 1 equals 100 and
+    100 mod 99 equals 1. But you're actually at position 0 so you
+    have to subtract 1. Also, 1 - 2 = -1 and -1 mod 99 equals 98. 
+    But you're actually at position 99.
 
     Args:
         position (int): Dial position
         num (int): action to take on position
 
     Returns:
-        final_result (int): new dial position
+        int: _description_
     """
     initial_result = position + action
-    
-    final_result = initial_result % 100
 
-    return final_result
+    if initial_result > 99:
+        compensate = -1 * initial_result % 99
+    elif initial_result < 0:
+        compensate = initial_result % 99
+    else:
+        compensate = 0
+    
+    updated_result = initial_result % 99
+    
+    return updated_result + compensate
 
 def main():
     
