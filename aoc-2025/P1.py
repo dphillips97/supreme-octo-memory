@@ -1,4 +1,5 @@
 import logging
+from typing import final
 
 START_DIAL_POSITION: int = 50
 ZERO_COUNTER: int = 0
@@ -41,17 +42,10 @@ def compute_result(position: int, action: int) -> int:
         int: _description_
     """
     initial_result = position + action
-
-    if initial_result > 99:
-        compensate = -1 * initial_result % 99
-    elif initial_result < 0:
-        compensate = initial_result % 99
-    else:
-        compensate = 0
     
-    updated_result = initial_result % 99
+    final_result = initial_result % 100
     
-    return updated_result + compensate
+    return final_result
 
 def main():
     
